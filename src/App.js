@@ -1,9 +1,17 @@
 import React from 'react';
+import SliderBlock from './components/blocks/sliderBlock';
 
 const App = () => {
   return (
     <>
-      <h1>маргарита павловна</h1>
+      <SliderBlock />
+      {/* 
+      <AboutBLock />
+      <AdvantageBlock />
+      <OrderBLock />
+      <GalleryBlock />
+      <ContactBlock /> 
+      */}
     </>
   );
 }
