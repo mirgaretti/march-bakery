@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { CommonTitle } from '../../common/styled';
 
 export const theme = [
   {
@@ -45,15 +46,8 @@ export const SliderContainer = styled.div`
   background-image: url('${(props) => props.theme.backgroundImage}');
 `;
 
-export const Title = styled.h1`
+export const Title = styled(CommonTitle)`
   margin: 0 0 30px 220px;
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 64px;
-  line-height: 85px;
-
-  color: ${(props) => props.color};
 `;
 
 export const ContentContainer = styled.div`
