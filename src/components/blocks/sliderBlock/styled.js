@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { CommonTitle } from '../../common/styled';
+import { CommonText, CommonTitle } from '../../common/styled';
 
 export const theme = [
   {
@@ -54,15 +54,8 @@ export const ContentContainer = styled.div`
   display: flex;
 `;
 
-export const Text = styled.div`
+export const Text = styled(CommonText)`
   margin: 0 100px 0 220px;
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 37px;
-
-  color: ${(props) => props.color};
 `;
 
 const MainImageContainer = styled.div`

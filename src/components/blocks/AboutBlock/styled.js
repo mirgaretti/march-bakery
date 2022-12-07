@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CommonTitle } from '../../common/styled';
+import { CommonText, CommonTitle } from '../../common/styled';
 
 export const AboutContainer = styled.div`
   background: top right no-repeat url('media/aboutBackground0.svg'), bottom left no-repeat url('media/aboutBackground1.svg');
@@ -20,12 +20,7 @@ export const TitleColor = styled.span`
   color: #FFBACB;
 `;
 
-export const Text = styled.p`
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
+export const Text = styled(CommonText)`
   margin: 50px 200px 0 ${(props) => props.bottom ? '100px' : '45px'};
 `;
 
