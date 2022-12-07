@@ -9,7 +9,7 @@ export const theme = [
     mainImage: {
       src: 'media/sliderImage0.png',
       height: '470px',
-      left: '173px',
+      left: '0px',
     },
     arrows: [
       {
@@ -39,14 +39,14 @@ export const theme = [
 ];
 
 export const SliderContainer = styled.div`
-  padding: 240px 0 0;
+  padding: 240px 240px 0;
   background-position: top right;
   background-repeat: no-repeat;
   background-image: url('${(props) => props.theme.backgroundImage}');
 `;
 
 export const Title = styled.h1`
-  margin: 0 0 0 220px;
+  margin: 0 0 30px 220px;
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: 400;
@@ -56,7 +56,23 @@ export const Title = styled.h1`
   color: ${(props) => props.color};
 `;
 
-const MainImageContainer = styled.div``;
+export const ContentContainer = styled.div`
+  display: flex;
+`;
+
+export const Text = styled.div`
+  margin: 0 100px 0 220px;
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 37px;
+
+  color: ${(props) => props.color};
+`;
+
+const MainImageContainer = styled.div`
+`;
 
 const MainImage = styled.img`
   height: ${(props) => props.height};
@@ -64,17 +80,17 @@ const MainImage = styled.img`
 `;
 
 const ArrowImage = styled.img`
-  position: relative;
+  position: absolute;
   top: ${(props) => props.top};
   left: ${(props) => props.left};
 `;
 
 export const SliderImage = (props) => {
-  const { mainImage, arrows } = props;
+  const { mainImage } = props;
   return (
     <MainImageContainer>
       <MainImage src={mainImage.src} height={mainImage.height} left={mainImage.left}/>
-      {arrows.map((arrow) => <ArrowImage key={arrow.src} src={arrow.src} top={arrow.top} left={arrow.left}/>)}
+      {mainImage.arrows.map((arrow) => <ArrowImage key={arrow.src} src={arrow.src} top={arrow.top} left={arrow.left}/>)}
     </MainImageContainer>
   )
 };
