@@ -2,46 +2,19 @@ import React from 'react';
 import styled from "styled-components";
 import { CommonText, CommonTitle } from '../../common/styled';
 
-export const theme = [
-  {
-    buttonColor: '#FFFFFF',
-    mainColor: '#88001B',
-    backgroundImage: 'media/sliderBackground0.svg',
-    mainImage: {
-      src: 'media/sliderImage0.png',
-      height: '470px',
-      left: '0px',
-    },
-    arrows: [
-      {
-        src: 'media/sliderArrow00.svg',
-        top: '-300px',
-        left: '-450px',
-      },
-      {
-        src: 'media/sliderArrow01.svg',
-        top: '-50px',
-        left: '-40px',
-      },
-    ]
-  },
-  {
-    buttonColor: '#F3722C',
-    mainColor: '#BC3908',
-    backgroundImage: 'sliderBackground1.svg',
-    mainImage: 'sliderImage1.png',
-  },
-  {
-    buttonColor: '#9800AB',
-    mainColor: '#6F0177',
-    backgroundImage: 'sliderBackground2.svg',
-    mainImage: 'sliderImage2.png',
-  },
-];
+export const Slider = styled.div`
+  display: flex;
+  width: 302%;
+  overflow-x: hidden;
+  transition-property: margin-left;
+  transition-duration: 2s;
+  margin-left: -${(props) => props.sliderPage * 100 + 0.5}%;
+`;
 
 export const SliderContainer = styled.div`
+  position: relative;
   padding: 240px 240px 0;
-  background-position: top right;
+  background-position: ${(props) => props.theme.backgroundPosition};
   background-repeat: no-repeat;
   background-image: url('${(props) => props.theme.backgroundImage}');
 `;
@@ -64,20 +37,50 @@ const MainImageContainer = styled.div`
 const MainImage = styled.img`
   height: ${(props) => props.height};
   margin-left: ${(props) => props.left};
+  margin-top: ${(props) => props.top};
 `;
 
 const ArrowImage = styled.img`
   position: absolute;
   top: ${(props) => props.top};
-  left: ${(props) => props.left};
+  left: calc(${(props) => (props.sliderPage - props.currentPage) * 100.5}% + ${(props) => props.left});
+  transition-property: left;
+  transition-duration: 2s;
 `;
 
 export const SliderImage = (props) => {
-  const { mainImage } = props;
+  const { currentPage, sliderPage, mainImage } = props;
   return (
     <MainImageContainer>
-      <MainImage src={mainImage.src} height={mainImage.height} left={mainImage.left}/>
-      {mainImage.arrows.map((arrow) => <ArrowImage key={arrow.src} src={arrow.src} top={arrow.top} left={arrow.left}/>)}
+      <MainImage src={mainImage.src} height={mainImage.height} left={mainImage.left} top={mainImage.top}/>
+      {mainImage.arrows.map((arrow) => <ArrowImage currentPage={currentPage} sliderPage={sliderPage} key={arrow.src} src={arrow.src} top={arrow.top} left={arrow.left}/>)}
     </MainImageContainer>
   )
 };
+
+const ArrowBorder = styled.div`
+  position: absolute;
+  clip-path: ${(props) => props.left ? 'polygon(0 50%, 100% 100%, 100% 0)' : 'polygon(0 0, 0% 100%, 100% 50%)'};
+  background-color: ${(props) => props.color};
+  padding: 1px;
+  height: 60px;
+  width: 60px;
+  left: ${(props) => props.left ? '20px' : 'calc(100% - 90px)'};
+  top: 540px;
+`;
+
+const ArrowBackground = styled.div`
+  clip-path: inherit;
+  background-color: #FFFFFF;
+  height: 60px;
+  width: 60px;
+`;
+
+export const Arrow = (props) => {
+  const { left, color, onClick } = props;
+  return (
+    <ArrowBorder onClick={onClick} left={left} color={color}>
+      <ArrowBackground />
+    </ArrowBorder>
+  );
+}

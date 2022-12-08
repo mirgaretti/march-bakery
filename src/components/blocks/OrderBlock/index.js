@@ -30,7 +30,7 @@ const OrderBLock = () => {
     <OrderBLockContainer>
       <Title>Оформление заказа</Title>
       <OptionsContainer>
-        {orderOptions.map((option) => <Option option={option} />)}
+        {orderOptions.map((option) => <Option key={option.title} option={option} />)}
       </OptionsContainer>
     </OrderBLockContainer>
   );

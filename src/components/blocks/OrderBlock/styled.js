@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { CommonText, CommonTitle } from '../../common/styled';
 
-export const OrderBLockContainer = styled.div``;
+export const OrderBLockContainer = styled.div`
+  background: center right no-repeat url('media/orderBackground.svg');
+`;
 
 export const Title = styled(CommonTitle)`
   width: fit-content;
@@ -45,6 +47,7 @@ const OrderButton = styled.button`
   border-radius: 50px;
   color: white;
   border: none;
+  outline: none;
   cursor: pointer;
   font-family: 'PT Serif';
   font-style: normal;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { CommonText, CommonTitle } from "../../common/styled";
 
 export const AdvantagesContainer = styled.div`
+  background: top right no-repeat url('media/advantagesBackground0.svg'), bottom left no-repeat url('media/advantagesBackground1.svg');
   padding: 0 0 100px;
 `;
 
