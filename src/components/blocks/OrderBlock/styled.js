@@ -26,7 +26,7 @@ export const OptionContainer = styled.div`
   border: 3px solid ${(props) => props.color};
   border-radius: 45px;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -41,6 +41,7 @@ const Text = styled(CommonText)`
 `;
 
 const OrderButton = styled.button`
+  margin: 0 auto;
   width: 300px;
   height: 100px;
   background: ${(props) => props.color};

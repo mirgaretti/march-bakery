@@ -14,7 +14,7 @@ const GalleryBlock = () => {
           return <Photo key={photoNum} src={src}/>;
         })}
       </PhotosContainer>
-    </GalleryBlockContainer>
+    </GalleryBlockContainer> 
   );
 }
 

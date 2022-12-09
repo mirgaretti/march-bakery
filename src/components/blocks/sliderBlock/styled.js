@@ -84,3 +84,19 @@ export const Arrow = (props) => {
     </ArrowBorder>
   );
 }
+
+export const Button = styled.button`
+  margin: 200px 0 0 500px;
+  width: 500px;
+  height: 100px;
+  box-sizing: border-box;
+  background: ${(props) => props.color};
+  border: 1px solid #FFBACB;
+  border-radius: 50px;
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 42px;
+  color: #FFFFFF;
+`;

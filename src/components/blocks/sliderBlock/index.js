@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from '../../header';
-import { SliderContainer, Slider, Title, ContentContainer, Text, SliderImage, Arrow } from './styled';
+import { SliderContainer, Slider, Title, ContentContainer, Text, SliderImage, Arrow, Button } from './styled';
 
 export const theme = [
   {
@@ -99,7 +99,10 @@ const SliderBlock = () => {
             <Title color={theme[sliderPage].mainColor}>{theme[sliderPage]?.title}</Title>
             <ContentContainer>
               <SliderImage currentPage={currentPage} sliderPage={sliderPage} mainImage={theme[sliderPage].mainImage}/>
-              <Text color={theme[sliderPage].mainColor}>{theme[sliderPage]?.text}</Text>
+              <div>
+                <Text color={theme[sliderPage].mainColor}>{theme[sliderPage]?.text}</Text>
+                <Button color={theme[sliderPage].mainColor}>Заказать</Button>
+              </div>
             </ContentContainer>
             <Arrow onClick={handleRightClick} right color={theme[currentPage].mainColor}/>
           </SliderContainer>

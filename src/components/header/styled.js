@@ -10,9 +10,9 @@ export const ButtonContainer = styled.div`
 `;
 
 export const HeaderButton = styled.button`
-  font-family: 'Inria Sans';
+  font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 24px;
   line-height: 29px;
   color: ${(props) => props.color};
@@ -21,6 +21,7 @@ export const HeaderButton = styled.button`
   background: none;
   height: fit-content;
   cursor: pointer;
+  
 `;
 
 export const Logo = styled.img`
@@ -35,4 +36,5 @@ export const HeaderContainer = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 `;
