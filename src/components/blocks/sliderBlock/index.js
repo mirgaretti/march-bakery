@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { orderOptions } from '../../common/utils';
 import Header from '../../header';
 import { SliderContainer, Slider, Title, ContentContainer, Text, SliderImage, Arrow, Button } from './styled';
 
@@ -83,7 +84,8 @@ export const theme = [
   },
 ];
 
-const SliderBlock = () => {
+const SliderBlock = (props) => {
+  const { handleOrderClick } = props;
   const [ currentPage, setCurrentPage ] = useState(0);
 
   const handleLeftClick = () => setCurrentPage((currentPage - 1) === -1 ? 0 : (currentPage - 1));
@@ -101,7 +103,7 @@ const SliderBlock = () => {
               <SliderImage currentPage={currentPage} sliderPage={sliderPage} mainImage={theme[sliderPage].mainImage}/>
               <div>
                 <Text color={theme[sliderPage].mainColor}>{theme[sliderPage]?.text}</Text>
-                <Button color={theme[sliderPage].mainColor}>Заказать</Button>
+                <Button color={theme[sliderPage].mainColor} onClick={() => handleOrderClick(orderOptions[sliderPage])}>Заказать</Button>
               </div>
             </ContentContainer>
             <Arrow onClick={handleRightClick} right color={theme[currentPage].mainColor}/>

@@ -99,4 +99,11 @@ export const Button = styled.button`
   font-size: 32px;
   line-height: 42px;
   color: #FFFFFF;
+  cursor: pointer;
+  :hover {
+    opacity: 0.8;
+  }
+  :active {
+    opacity: 1;
+  }
 `;

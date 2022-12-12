@@ -10,9 +10,9 @@ const Header = (props) => {
       <Logo src={logoSrc} />
       <ButtonContainer>
         <HeaderButton color={theme.buttonColor}>Главная</HeaderButton>
-        <HeaderButton color={theme.buttonColor}>О нас</HeaderButton>
-        <HeaderButton color={theme.buttonColor}>Услуги</HeaderButton>
-        <HeaderButton color={theme.buttonColor}>Контакты</HeaderButton>
+        <HeaderButton color={theme.buttonColor} onClick={() => window.scrollTo(0, 1000)}>О нас</HeaderButton>
+        <HeaderButton color={theme.buttonColor} onClick={() => window.scrollTo(0, 2900)}>Услуги</HeaderButton>
+        <HeaderButton color={theme.buttonColor} onClick={() => window.scrollTo(0, 5000)}>Контакты</HeaderButton>
       </ButtonContainer>
     </HeaderContainer>
   );

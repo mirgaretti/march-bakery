@@ -40,7 +40,7 @@ const Text = styled(CommonText)`
   line-height: 50px;
 `;
 
-const OrderButton = styled.button`
+export const OrderButton = styled.button`
   margin: 0 auto;
   width: 300px;
   height: 100px;
@@ -49,13 +49,13 @@ const OrderButton = styled.button`
   color: white;
   border: none;
   outline: none;
-  cursor: pointer;
   font-family: 'PT Serif';
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 37px;
   color: white;
+  cursor: pointer;
   :hover {
     opacity: 0.8;
   }
@@ -65,7 +65,7 @@ const OrderButton = styled.button`
 `;
 
 export const Option = (props) => {
-  const { option: { title, price, weight, people, color } } = props;
+  const { option: { title, price, weight, people, color }, handleClick } = props;
 
   return (
     <OptionContainer color={color}>
@@ -75,7 +75,7 @@ export const Option = (props) => {
         <Text>{weight}</Text>
         <Text>{people}</Text>
       </div>
-      <OrderButton color={color}>Заказать</OrderButton>
+      <OrderButton color={color} onClick={handleClick}>Заказать</OrderButton>
     </OptionContainer>
   );
 }
